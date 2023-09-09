@@ -18,6 +18,7 @@ export default function Button(props) {
     }
     page = removeAfterPage(page);
   }
+  console.log("page value is : "+page);
 
   const readMore = () => {
     router.push("/" + page + "/" + movieId);

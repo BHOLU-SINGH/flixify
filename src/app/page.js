@@ -47,37 +47,6 @@ export default async function Page() {
           ))}
         </div>
       </div>
-      <div className="pagination">
-        <ul className="center">
-          <li className="active">
-            <Link href="1">1</Link>
-          </li>
-          <li>
-            <Link href="2">2</Link>
-          </li>
-          <li>
-            <Link href="3">3</Link>
-          </li>
-          <li>
-            <Link href="4">4</Link>
-          </li>
-          <li>
-            <Link href="5">5</Link>
-          </li>
-          <li>
-            <Link href="6">6</Link>
-          </li>
-          <li>
-            <Link href="#">...</Link>
-          </li>
-          <li>
-            <Link href="74">74</Link>
-          </li>
-          <li>
-            <Link href="2">next</Link>
-          </li>
-        </ul>
-      </div>
       <Footer />
     </main>
   );
