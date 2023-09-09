@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Header from "./Components/Header";
-import Button from "./Components/Button";
-import Footer from "./Components/Footer";
+import Header from "../Components/Header";
+import Button from "../Components/Button";
+import Footer from "../Components/Footer";
 import Link from "next/link";
 
 const getMoviesList = async () => {
