@@ -10,7 +10,7 @@ const getMoviesList = async () => {
   return response.result;
 };
 
-export default async function Page() {
+async function Page() {
   const res = await getMoviesList();
 
   return (
@@ -83,3 +83,5 @@ export default async function Page() {
     </main>
   );
 }
+
+export default Page();
