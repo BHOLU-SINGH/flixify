@@ -12,9 +12,6 @@ const getMoviesList = async () => {
 
 export default async function Page() {
   const res = await getMoviesList();
-  // console.log(res);
-  // console.log(res.page);
-  // console.log(res.total_pages)
 
   return (
     <main className="container">
@@ -23,30 +20,30 @@ export default async function Page() {
         <div className="searchBox">lorem500</div>
         <div className="cardBox">
           {res.results.map((movie) => (
-            // eslint-disable-next-line react/jsx-key
-            <div className="card">
-              <img
-                src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
-                alt="{movie.title}"
-                width={200}
-                height={50}
-                priority
-              />
-              <span className="title">{movie.title}</span>
-              <div>
-                <span>{movie.release_date}</span>
-                <span className="popularity">{movie.vote_average}⭐</span>
+            <>
+              <div className="card">
+                <img
+                  src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
+                  alt="{movie.title}"
+                  width={200}
+                  height={50}
+                  priority
+                />
+                <span className="title">{movie.title}</span>
+                <div>
+                  <span>{movie.release_date}</span>
+                  <span className="popularity">{movie.vote_average}⭐</span>
+                </div>
+                <span className="overview">
+                  <small className="ow-title">Title: {movie.title}</small>
+                  <small className="ow-rel-date">
+                    Release Date: {movie.release_date}
+                  </small>
+                  <small className="overw">OverView: {movie.overview}</small>
+                  <Button id={movie.id} page="movie" />
+                </span>
               </div>
-              <span className="overview">
-                <small className="ow-title">Title: {movie.title}</small>
-                <small className="ow-rel-date">
-                  Release Date: {movie.release_date}
-                </small>
-                <small className="overw">OverView: {movie.overview}</small>
-                <Button id={movie.id} page="movie" />
-                {/* <Link href="/movie" id={movie.id}> View More </Link> */}
-              </span>
-            </div>
+            </>
           ))}
         </div>
       </div>
@@ -77,7 +74,7 @@ export default async function Page() {
             <Link href="74">{res.total_pages}</Link>
           </li>
           <li>
-          <Link href="2">next</Link>
+            <Link href="2">next</Link>
           </li>
         </ul>
       </div>
