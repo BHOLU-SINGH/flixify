@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-export default function Button(props) {
+function Button(props) {
   const router = useRouter();
   const movieId = props.id;
   let page = props.page;
@@ -18,7 +18,6 @@ export default function Button(props) {
     }
     page = removeAfterPage(page);
   }
-  console.log("page value is : "+page);
 
   const readMore = () => {
     router.push("/" + page + "/" + movieId);
@@ -26,3 +25,5 @@ export default function Button(props) {
 
   return <button onClick={readMore}>Read More</button>;
 }
+
+export default Button;
