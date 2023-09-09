@@ -10,7 +10,7 @@ const getMoviesList = async () => {
   return response.result;
 };
 
-async function Page() {
+export default async function Page() {
   const res = await getMoviesList();
 
   return (
@@ -24,7 +24,7 @@ async function Page() {
               <div className="card">
                 <Image
                   src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
-                  alt="{movie.title}"
+                  alt={movie.title}
                   width={200}
                   height={50}
                   priority
@@ -41,7 +41,6 @@ async function Page() {
                   </small>
                   <small className="overw">OverView: {movie.overview}</small>
                   <Button id={movie.id} page="movie" />
-                  {/* <Link href="/movie" id={movie.id}> View More </Link> */}
                 </span>
               </div>
             </>
@@ -51,7 +50,7 @@ async function Page() {
       <div className="pagination">
         <ul className="center">
           <li className="active">
-            <Link href="1">{res.page}</Link>
+            <Link href="1">1</Link>
           </li>
           <li>
             <Link href="2">2</Link>
@@ -72,7 +71,7 @@ async function Page() {
             <Link href="#">...</Link>
           </li>
           <li>
-            <Link href="74">{res.total_pages}</Link>
+            <Link href="74">74</Link>
           </li>
           <li>
             <Link href="2">next</Link>
@@ -83,5 +82,3 @@ async function Page() {
     </main>
   );
 }
-
-export default Page();
