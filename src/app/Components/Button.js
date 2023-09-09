@@ -7,15 +7,17 @@ export default function Button(props) {
   const movieId = props.id;
   let page = props.page;
 
-  function removeAfterPage(string) {
-    const pageIndex = string.indexOf("page");
-    if (pageIndex !== -1) {
-      return string.slice(0, pageIndex);
-    } else {
-      return string;
+  if (page[page.length - 2] === "page") {
+    function removeAfterPage(string) {
+      const pageIndex = string.indexOf("page");
+      if (pageIndex !== -1) {
+        return string.slice(0, pageIndex);
+      } else {
+        return string;
+      }
     }
+    page = removeAfterPage(page);
   }
-  page = removeAfterPage(page);
 
   const readMore = () => {
     router.push("/" + page + "/" + movieId);
