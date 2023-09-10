@@ -5,8 +5,7 @@ import Footer from "./Components/Footer";
 import Link from "next/link";
 
 
-export default async function Page() {
-  const res = await getMoviesList();
+export default function Page() {
 
   return (
     <main className="container">
