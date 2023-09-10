@@ -15,37 +15,7 @@ export default async function Page() {
   return (
     <main className="container">
       <Header />
-      <div className="content center">
-        <div className="searchBox">lorem500</div>
-        <div className="cardBox">
-          {res.results.map((movie) => (
-            <>
-              <div className="card">
-                <Image
-                  src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
-                  alt={movie.title}
-                  width={200}
-                  height={50}
-                  priority
-                />
-                <span className="title">{movie.title}</span>
-                <div>
-                  <span>{movie.release_date}</span>
-                  <span className="popularity">{movie.vote_average}⭐</span>
-                </div>
-                <span className="overview">
-                  <small className="ow-title">Title: {movie.title}</small>
-                  <small className="ow-rel-date">
-                    Release Date: {movie.release_date}
-                  </small>
-                  <small className="overw">OverView: {movie.overview}</small>
-                  <Link href={"#/"+movie.id}>Read More</Link>
-                </span>
-              </div>
-            </>
-          ))}
-        </div>
-      </div>
+       <h1>Home page by FreeProjects1</h1>
       <Footer />
     </main>
   );
