@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "./Components/Header";
+import Button from "./Components/Button";
 import Footer from "./Components/Footer";
 import Link from "next/link";
 
@@ -31,7 +32,7 @@ export default function Page() {
                     Release Date: 01/01/2001
                   </small>
                   <small className="overw">OverView: This is a movie</small>
-		  <Link href="#">Read More </Link>
+		  <Button id="#" page="movie" />
                 </span>
               </div>
         </div>
