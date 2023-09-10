@@ -21,3 +21,4 @@ export async function GET(request, content) {
       success: false,
     });
   }
+}
