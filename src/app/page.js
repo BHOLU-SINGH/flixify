@@ -33,7 +33,7 @@ export default async function Page() {
                     Release Date: 01/01/2001
                   </small>
                   <small className="overw">OverView: This is a movie</small>
-                  <Button id=""123456" page="movie" />
+                  <Button id="123456" page="movie" />
                 </span>
               </div>
         </div>
