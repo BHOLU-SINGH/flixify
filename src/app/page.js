@@ -22,7 +22,7 @@ export default function Page() {
                 />
                 <span className="title">The Godfather</span>
                 <div>
-                  <span>{movie.release_date}</span>
+                  <span>01/01/2001</span>
                   <span className="popularity">9.1⭐</span>
                 </div>
                 <span className="overview">
