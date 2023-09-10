@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "./Components/Header";
 import Button from "./Components/Button";
 import Footer from "./Components/Footer";
+import Link from "next/link";
 
 
 export default async function Page() {
