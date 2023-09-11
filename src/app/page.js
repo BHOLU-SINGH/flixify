@@ -5,7 +5,7 @@ import Footer from "./Components/Footer";
 import Link from "next/link";
 
 const getMoviesList = async () => {
-  let data = await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=04bb17c0897894ac573e81dad9bd0d64");
+  let data = await fetch("http://localhost:3000/api/movie/");
   let response = await data.json();
   return response.result;
 };
