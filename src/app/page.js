@@ -10,7 +10,7 @@ async function getServerSideProps() {
   return data;
 }
 
-export default function Page() {
+export default async function Page() {
   let data = await getServerSideProps();
   data = data.result.results;
 
