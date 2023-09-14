@@ -1,83 +1,23 @@
-import Image from "next/image";
-import Header from "./Components/Header";
-import Button from "./Components/Button";
-import Footer from "./Components/Footer";
-import Link from "next/link";
-
-async function getServerSideProps() {
-  const response = await fetch("http://localhost:3000/api/movie");
-  const data = response.json();
+const getServerSideProps = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await res.json();
   return data;
 }
 
-export default async function Page() {
-  let data = await getServerSideProps();
-  data = data.result.results;
+const page = async () => {
+  const data = await getServerSideProps();
+  console.log("Data is : " + data);
 
   return (
-    <main className="container">
-      <Header />
-      <div className="content center">
-        <div className="searchBox">lorem500</div>
-        <div className="cardBox">
-          {data.map((item) => (
-            <div className="card" key={item.id}>
-              <Image
-                src={"https://image.tmdb.org/t/p/w500" + item.poster_path}
-                alt={item.title}
-                width={200}
-                height={50}
-                priority
-              />
-              <span className="title">{item.title}</span>
-              <div>
-                <span>{item.release_date}</span>
-                <span className="popularity">{item.vote_average}⭐</span>
-              </div>
-              <span className="overview">
-                <small className="ow-title">Title: {item.title}</small>
-                <small className="ow-rel-date">
-                  Release Date: {item.release_date}
-                </small>
-                <small className="overw">OverView: {item.overview}</small>
-                <Button id={item.id} page="movie" />
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="pagination">
-        <ul className="center">
-          <li className="active">
-            <Link href="1">1</Link>
-          </li>
-          <li>
-            <Link href="2">2</Link>
-          </li>
-          <li>
-            <Link href="3">3</Link>
-          </li>
-          <li>
-            <Link href="4">4</Link>
-          </li>
-          <li>
-            <Link href="5">5</Link>
-          </li>
-          <li>
-            <Link href="6">6</Link>
-          </li>
-          <li>
-            <Link href="#">...</Link>
-          </li>
-          <li>
-            <Link href="74">74</Link>
-          </li>
-          <li>
-            <Link href="2">next</Link>
-          </li>
-        </ul>
-      </div>
-      <Footer />
-    </main>
+    <div className="container">
+      <h1>This is a demo page</h1>
+      <ul>
+        {data.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
   );
-}
+};
+
+export default page;
