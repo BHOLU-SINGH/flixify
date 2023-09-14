@@ -4,14 +4,14 @@ import Button from "./Components/Button";
 import Footer from "./Components/Footer";
 import Link from "next/link";
 
-const getServerSideProps = async () => {
+const getMovieData = async () => {
   let response = await fetch("http://localhost:3000/api/movie");
   const data = await response.json();
   return data.result;
 };
 
 const page = async () => {
-  const res = await getServerSideProps();
+  const res = await getMovieData();
   return (
     <main className="container">
       <Header />
