@@ -7,7 +7,7 @@ import Link from "next/link";
 const getServerSideProps = async () => {
   let data = await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=04bb17c0897894ac573e81dad9bd0d64");
   let response = await data.json();
-  return response.result;
+  return response;
 };
 
 const page = async () => {
