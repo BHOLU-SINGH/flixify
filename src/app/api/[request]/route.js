@@ -113,7 +113,7 @@
 // // https://image.tmdb.org/t/p/w500 + image_url
 
 import { NextResponse } from "next/server";
-const { API_KEY } = process.env;
+const API_KEY = process.env.API_KEY;
 const api = "https://api.themoviedb.org/3/";
 
 const getServerSideProps = async (path, pageNo) => {

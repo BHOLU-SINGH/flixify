@@ -5,9 +5,9 @@ import Footer from "./Components/Footer";
 import Link from "next/link";
 
 const getServerSideProps = async () => {
-  let response = await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=04bb17c0897894ac573e81dad9bd0d64");	
+  let response = await fetch("http://localhost:3000/api/movie");	
   const data = await response.json();
-  return data;
+  return data.result;
 };
 
 export default async function page() {
