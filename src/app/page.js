@@ -4,14 +4,14 @@ import Button from "./Components/Button";
 import Footer from "./Components/Footer";
 import Link from "next/link";
 
-const getMovieData = async () => {
-  let response = await fetch("http://localhost:3000/api/movie");
+const getServerSideProps = async () => {
+  let response = await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=04bb17c0897894ac573e81dad9bd0d64");
   const data = await response.json();
-  return data.result;
+  return data;
 };
 
-const page = async () => {
-  const res = await getMovieData();
+export default async function page() {
+  const res = await getServerSideProps();
   return (
     <main className="container">
       <Header />
@@ -79,4 +79,3 @@ const page = async () => {
     </main>
   );
 }
-export default page;
