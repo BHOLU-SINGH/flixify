@@ -7,10 +7,7 @@ const getProductionCountry = async (props) => {
 
 export default async function ProductionCountry(props) {
   const page = props.page;
-  let query = page;
-  query = query.replaceAll("/", "_");
-  query = query.replaceAll(",", "_");
-  const res = await getProductionCountry(query);
+  const res = await getProductionCountry(page);
 
   const countryLength = res.production_countries.length;
   let country = [];

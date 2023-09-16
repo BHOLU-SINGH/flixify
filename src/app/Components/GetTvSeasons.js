@@ -7,10 +7,7 @@ const getEpisodesData = async (props) => {
 
 export default async function GetTvSeasons(props) {
   const page = props.page;
-  let query = page;
-  query = query.replaceAll("/", "_");
-  query = query.replaceAll(",", "_");
-  const episode = await getEpisodesData(query);
+  const episode = await getEpisodesData(page);
 
   return (
     <div className="data column">

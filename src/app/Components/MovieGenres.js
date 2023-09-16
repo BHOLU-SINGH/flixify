@@ -6,10 +6,7 @@ const getMovieGenres = async (props) => {
 
 export default async function MovieGenres(props) {
   const page = props.page;
-  let query = page;
-  query = query.replaceAll("/", "_");
-  query = query.replaceAll(",", "_");
-  const res = await getMovieGenres(query);
+  const res = await getMovieGenres(page);
   let lengthVal = res.genres.length;
 
   let genres = [];

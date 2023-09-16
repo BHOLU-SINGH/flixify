@@ -7,10 +7,7 @@ const getEpisodesCreator = async (props) => {
 
 export default async function GetTvCreator(props) {
   const page = props.page;
-  let query = page;
-  query = query.replaceAll("/", "_");
-  query = query.replaceAll(",", "_");
-  const episode = await getEpisodesCreator(query);
+  const episode = await getEpisodesCreator(page);
 
   return (
     <p>

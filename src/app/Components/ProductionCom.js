@@ -7,10 +7,7 @@ const getProdCom = async (props) => {
 
 export default async function ProductionCom(props) {
   const page = props.page;
-  let query = page;
-  query = query.replaceAll("/", "_");
-  query = query.replaceAll(",", "_");
-  const res = await getProdCom(query);
+  const res = await getProdCom(page);
 
   const comLength = res.production_companies.length;
   let company = [];

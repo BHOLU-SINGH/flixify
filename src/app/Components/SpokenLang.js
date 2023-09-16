@@ -6,10 +6,7 @@ const getSpokenLang = async (props) => {
 
 export default async function SpokenLang(props) {
   const page = props.page;
-  let query = page;
-  query = query.replaceAll("/", "_");
-  query = query.replaceAll(",", "_");
-  const res = await getSpokenLang(query);
+  const res = await getSpokenLang(page);
 
   const langLength = (res.spoken_languages).length;
   let language = [];

@@ -7,10 +7,7 @@ const getTvNetworkData = async (props) => {
 
 export default async function TvNetworksList(props) {
   const page = props.page;
-  let query = page;
-  query = query.replaceAll("/", "_");
-  query = query.replaceAll(",", "_");
-  const series = await getTvNetworkData(query);
+  const series = await getTvNetworkData(page);
 
   return (
     <p>

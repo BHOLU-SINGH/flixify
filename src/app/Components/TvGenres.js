@@ -6,11 +6,7 @@ const getTvGenres = async (props) => {
 
 export default async function TvGenres(props) {
   const page = props.page;
-  let query = page;
-  query = query.replaceAll("/", "_");
-  query = query.replaceAll(",", "_");
-  
-  const res = await getTvGenres(query);
+  const res = await getTvGenres(page);
   let lengthVal = res.genres.length;
 
   let genres = [];
