@@ -8,7 +8,7 @@ const API_KEY = process.env.API_KEY;
 const getServerSideProps = async () => {
   let response = await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=API_KEY");	
   const data = await response.json();
-  return data.result;
+  return data;
 };
 
 export default async function page() {
