@@ -3,12 +3,11 @@ import Header from "./Components/Header";
 import Button from "./Components/Button";
 import Footer from "./Components/Footer";
 import Link from "next/link";
-const { API_KEY } = process.env;
 
 const getServerSideProps = async () => {
-  let response = await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key="+API_KEY);
+  let response = await fetch("http://localhost:3000/api/movie");
   const data = await response.json();
-  return data;
+  return data.result;
 };
 
 const page = async () => {

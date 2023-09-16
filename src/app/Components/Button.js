@@ -4,23 +4,29 @@ import { useRouter } from "next/navigation";
 
 function Button(props) {
   const router = useRouter();
-  const movieId = props.id;
+  const Id = props.id;
   let page = props.page;
+  page = page.replaceAll(",", "/");
+  const arr = page.split("/");
+  const firstElement = arr[0];
+  const pageElement = arr[arr.length - 2];
 
-  if (page[page.length - 2] === "page") {
-    function removeAfterPage(string) {
-      const pageIndex = string.indexOf("page");
-      if (pageIndex !== -1) {
-        return string.slice(0, pageIndex);
-      } else {
-        return string;
-      }
+
+  let array = arr;
+  if (arr[0] === "movie" || arr[0] === "tv") {
+    if (arr[1] !== "page") {
+      array.shift();
     }
-    page = removeAfterPage(page);
   }
 
   const readMore = () => {
-    router.push("/" + page + "/" + movieId);
+    if (pageElement === "page") {
+      array.pop();
+      array.pop();
+      router.push("/" + firstElement + "/" + array + "/" + Id);
+    } else {
+      router.push(array + "/" + Id);
+    }
   };
 
   return <button onClick={readMore}>Read More</button>;
