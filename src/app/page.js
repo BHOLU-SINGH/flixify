@@ -10,7 +10,7 @@ const getMovieData = async () => {
   return data.result;
 };
 
-export default async function page() {
+const page = async () => {
   const res = await getMovieData();
   return (
     <main className="container">
@@ -79,3 +79,4 @@ export default async function page() {
     </main>
   );
 }
+export default page;
