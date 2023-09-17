@@ -16,7 +16,8 @@ const getServerSideProps = async (rootApi, apiKEY ,pageAddress, pageNo) => {
 };
 
 export const GET = async (request, content) => {
-  const path = content.params.request;
+  let path = content.params.request;
+  path = path.split("_");
   const api = "https://api.themoviedb.org/3/";
 
   let newPath = ""+path;
