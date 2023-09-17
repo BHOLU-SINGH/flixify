@@ -6,7 +6,7 @@ import Link from "next/link";
 const { API_URL, API_KEY } = process.env;
 
 const getMovieData = async (props) => {
-  let response = await fetch(API_URL + "movie/now_playing?api_key=" + API_KEY);
+  let response = await fetch(API_URL + "movie/popular?api_key=" + API_KEY);
   const data = await response.json();
   return data;
 };
