@@ -3,7 +3,7 @@ import Header from "./Components/Header";
 import Button from "./Components/Button";
 import Footer from "./Components/Footer";
 import Link from "next/link";
-import apiKey = process.env.API_Key;
+const apiKey = process.env.API_KEY;
 
 
 export default async function page() {
