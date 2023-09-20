@@ -178,10 +178,10 @@ const Header = () =>  {
           <li>
             <Link href="/">TV Shows</Link>
             <ul className="dropdown-menu">
-              <li><Link href="/tv/airing-today">Airing Today</Link></li>
-              <li><Link href="/tv/on-the-air">On The Air</Link></li>
-              <li><Link href="/tv/popular">Popular</Link></li>
-              <li><Link href="/tv/top-rated">Top Rated</Link></li>
+              <li><Link href="#">Airing Today</Link></li>
+              <li><Link href="#">On The Air</Link></li>
+              <li><Link href="#">Popular</Link></li>
+              <li><Link href="#">Top Rated</Link></li>
             </ul>
           </li>
           <li>
