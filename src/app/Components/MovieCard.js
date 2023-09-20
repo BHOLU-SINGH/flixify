@@ -1,19 +1,7 @@
 import Image from "next/image";
 import Button from "./Button";
 
-const { API_URL, API_KEY } = process.env;
-
-async function getServerSideProps(props) {
-    const response = await fetch(props)
-    const data = await response.json();
-
-    return data;
-}
-
-const MovieCard = async ({ API_PAGE, page }) => {
-    const API_PATH = API_PAGE;
-    const API = API_URL + API_PATH + "?api_key=" + API_KEY;
-    const data = await getServerSideProps(API);
+const MovieCard = async ({ data, page }) => {
     return (
         <div className="content center">
             <div className="cardBox">
