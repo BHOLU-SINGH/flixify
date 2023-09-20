@@ -1,6 +1,6 @@
-import Header from "./components/Header";
-import MovieCard from "./components/MovieCard";
-import Footer from "./components/Footer";
+import Header from "../components/Header";
+import MovieCard from "../components/MovieCard";
+import Footer from "../components/Footer";
 
 export default async function page() {
   return (
@@ -9,5 +9,5 @@ export default async function page() {
       <MovieCard API_PAGE="movie/now_playing" page="movie" />
       <Footer />
     </div>
-  );
+  );  
 }
