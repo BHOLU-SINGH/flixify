@@ -1,6 +1,6 @@
-import Header from "./components/Header";
-import MovieCard from "./components/MovieCard";
-import Footer from "./components/Footer";
+import Header from "./Components/Header";
+import MovieCard from "./Components/MovieCard";
+import Footer from "./Components/Footer";
 
 const { API_URL, API_KEY } = process.env;
 

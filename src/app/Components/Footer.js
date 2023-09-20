@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Footer(){
+const Footer = () => {
     return(
         <footer>
         <div className="footer-1">Flixify copyright &copy; 2023.</div>
@@ -30,3 +30,5 @@ export default function Footer(){
       </footer>
     )
 }
+
+export default Footer;

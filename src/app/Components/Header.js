@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+const Header = () =>  {
   return (
     <header>
       <div className="header-1">
@@ -224,3 +224,6 @@ export default function Header() {
     </header>
   );
 }
+
+
+export default Header;
