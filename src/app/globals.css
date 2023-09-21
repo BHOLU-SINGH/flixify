@@ -724,14 +724,13 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     margin-bottom: 1rem;
 }
-
 .container .content .card-expand .other-composite .sidebar .icons i {
     color: #eee;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-.container .content .card-expand .other-composite .sidebar .icons i:not(:last-child) {
+.container .content .card-expand .other-composite .sidebar .icons a:not(:last-child) {
     margin-right: 1.2rem;
 }
 

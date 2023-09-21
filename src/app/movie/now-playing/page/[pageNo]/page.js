@@ -16,7 +16,7 @@ const page = async (props) => {
 
     return (
         <div className="container">
-            <MovieCard data={data} page={"movie/now-playing/page/" + pageNo} />
+            <MovieCard data={data} page="movie/now-playing" />
         </div>
     );
 }

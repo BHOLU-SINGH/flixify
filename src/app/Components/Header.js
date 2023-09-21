@@ -35,33 +35,10 @@ const Header = () =>  {
           <li>
             <Link href="#">Movies</Link>
             <ul className="dropdown-menu">
-              <li>
-                <Link href="#">South Hindi Dubbed</Link>
-              </li>
-              <li>
-                <Link href="#">Adult Movies</Link>
-              </li>
-              <li>
-                <Link href="#">Bollywood</Link>
-              </li>
-              <li>
-                <Link href="#">Dual Audio</Link>
-              </li>
-              <li>
-                <Link href="#">Hindi Dubbed</Link>
-              </li>
-              <li>
-                <Link href="#">Hollywood</Link>
-              </li>
-              <li>
-                <Link href="#">Multi Audio</Link>
-              </li>
-              <li>
-                <Link href="#">Panjabi</Link>
-              </li>
-              <li>
-                <Link href="#">Bengali</Link>
-              </li>
+              <li><Link href="/movie/now-playing">Now Playing</Link></li>
+              <li><Link href="/movie/popular">Popular</Link></li>
+              <li><Link href="/movie/top-rated">Top Rated</Link></li>
+              <li><Link href="/movie/upcoming">Upcoming</Link></li>
             </ul>
           </li>
           <li>
@@ -178,10 +155,10 @@ const Header = () =>  {
           <li>
             <Link href="/">TV Shows</Link>
             <ul className="dropdown-menu">
-              <li><Link href="#">Airing Today</Link></li>
-              <li><Link href="#">On The Air</Link></li>
-              <li><Link href="#">Popular</Link></li>
-              <li><Link href="#">Top Rated</Link></li>
+              <li><Link href="/tv/airing-today">Airing Today</Link></li>
+              <li><Link href="/tv/on-the-air">On The Air</Link></li>
+              <li><Link href="/tv/popular">Popular</Link></li>
+              <li><Link href="/tv/top-rated">Top Rated</Link></li>
             </ul>
           </li>
           <li>
