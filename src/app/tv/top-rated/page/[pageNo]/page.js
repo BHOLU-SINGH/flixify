@@ -1,12 +1,12 @@
 import Header from "@/app/Components/Header";
-import MovieCard from "@/app/Components/MovieCard";
+import TvCard from "@/app/Components/TvCard";
 import Pagination from "@/app/Components/Pagination";
 import Footer from "@/app/Components/Footer";
 
 const { API_URL, API_KEY } = process.env;
 
 async function getServerSideProps(pageNo) {
-    const API = API_URL + "movie/now_playing?api_key=" + API_KEY + "&page=" + pageNo;
+    const API = API_URL + "tv/top_rated?api_key=" + API_KEY + "&page=" + pageNo;
     const response = await fetch(API);
     const data = await response.json();
     return data;
@@ -20,8 +20,8 @@ const page = async (props) => {
     return (
         <div className="container">
             <Header />
-            <MovieCard data={data} page="movie/now-playing" />
-            <Pagination start_page={data.page} end_page={data.total_pages} page="/movie/now-playing/page" />
+            <TvCard data={data} page="tv/top-rated" />
+            <Pagination start_page={data.page} end_page={data.total_pages} page="tv/top-rated/page" />
             <Footer />
         </div>
     );

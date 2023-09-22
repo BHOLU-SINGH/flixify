@@ -1,5 +1,6 @@
 import Header from "@/app/Components/Header";
 import MovieCard from "@/app/Components/MovieCard";
+import Pagination from "@/app/Components/Pagination";
 import Footer from "@/app/Components/Footer";
 
 const { API_URL, API_KEY } = process.env;
@@ -17,6 +18,7 @@ export default async function page() {
         <div className="container">
             <Header />
             <MovieCard data={data} page="movie/now-playing" />
+            <Pagination start_page={data.page} end_page={data.total_pages} page="/movie/now-playing/page" />
             <Footer />
         </div>
     );

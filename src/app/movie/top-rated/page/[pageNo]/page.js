@@ -1,4 +1,7 @@
+import Header from "@/app/Components/Header";
 import MovieCard from "@/app/Components/MovieCard";
+import Pagination from "@/app/Components/Pagination";
+import Footer from "@/app/Components/Footer";
 
 const { API_URL, API_KEY } = process.env;
 
@@ -16,7 +19,10 @@ const page = async (props) => {
 
     return (
         <div className="container">
+            <Header />
             <MovieCard data={data} page="movie/top-rated" />
+            <Pagination start_page={data.page} end_page={data.total_pages} page="/movie/top-rated/page" />
+            <Footer />
         </div>
     );
 }
