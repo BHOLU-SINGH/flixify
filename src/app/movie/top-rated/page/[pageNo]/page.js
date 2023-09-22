@@ -21,7 +21,7 @@ const page = async (props) => {
         <div className="container">
             <Header />
             <MovieCard data={data} page="movie/top-rated" />
-            <Pagination start_page={data.page} end_page={data.total_pages} page="/movie/top-rated/page" />
+            <Pagination start_page={data.page} end_page={data.total_pages} page="movie/top-rated/page" />
             <Footer />
         </div>
     );

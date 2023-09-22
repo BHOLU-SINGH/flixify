@@ -18,7 +18,7 @@ export default async function page() {
         <div className="container">
             <Header />
             <MovieCard data={data} page="movie/now-playing" />
-            <Pagination start_page={data.page} end_page={data.total_pages} page="/movie/now-playing/page" />
+            <Pagination start_page={data.page} end_page={data.total_pages} page="movie/now-playing/page" />
             <Footer />
         </div>
     );
