@@ -26,7 +26,7 @@ const ProductionCom = (props) => {
     return (
         <div className="production_com">
             <h3>Production Company</h3>
-            <div className="pro_com_list flex">{company}</div>
+            <div className="pro_com_list center">{company}</div>
         </div>
     );
 }

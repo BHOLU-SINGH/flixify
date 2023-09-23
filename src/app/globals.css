@@ -83,16 +83,24 @@ body::-webkit-scrollbar-thumb {
     font-size: 16px;
 }
 
-.container header .header-1 .header-1-2 img {
+.container header .header-1 .header-1-2 img, .container header .header-1 .header-1-2 i {
     position: absolute;
     display: flex;
-    border-radius: 5px;
     right: 15%;
     cursor: pointer;
     background: rgba(0, 0, 0, 0.1);
     padding: 5px 7px;
     transition: background 0.3s ease;
 }
+.container header .header-1 .header-1-2 i{
+    right: 15%;
+    width: 45px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 
 .container header .header-1 .header-1-2 img:hover {
     background: #ccc;
@@ -369,9 +377,10 @@ body::-webkit-scrollbar-thumb {
     z-index: 3;
 }
 
-/* .container .content .card-expand .bg_img img:last-child{
-    filter: brightness(0.5);
-  } */
+.container .content .card-expand .bg_img img:last-child{
+    /* filter: brightness(0.5); */
+    margin-right: 100px;
+  }
 .container .content .card-expand .card-data {
     position: absolute;
     right: 0;
@@ -384,69 +393,88 @@ body::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.5);
     color: #f3f3f3;
 }
-
-.container .content .card-expand .card-data h1 {
+.tv-card-data, .movie_data_card{
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.05);
+    margin: 0 30px 10px;
+    display: none !important;
+}
+.movie_data_card{
+    margin-top: 50px;
+    margin-bottom: -50px;
+    padding: 20px 30px;
+    width: 100%;
+}
+.tv-card-data, .movie_data_card, .tv-card-data a, .movie_data_card a{
+    color: #f3f3f3;
+}
+.container .content .card-expand .card-data h1, .tv-card-data h1, .movie_data_card h1 {
     font-size: 3rem;
 }
 
-.container .content .card-expand .card-data h1 span {
+.container .content .card-expand .card-data h1 span, .tv-card-data h1 span, .movie_data_card h1 span {
     color: #ddd;
     font-size: 2rem;
 }
 
-.container .content .card-expand .card-data .genres span {
+.container .content .card-expand .card-data .genres span, .tv-card-data .genres span, .movie_data_card .genres span {
     /* width: 5px;
     height: 5px; */
     font-size: 2rem;
     margin: -20px 5px 0;
 }
 
-.container .content .card-expand .card-data .rating_div {
+.container .content .card-expand .card-data .rating_div, .tv-card-data .rating_div, .movie_data_card .rating_div {
     margin-top: 0.5rem;
 }
 
-.container .content .card-expand .card-data .rating_div a {
+.container .content .card-expand .card-data .rating_div a, .tv-card-data .rating_div a, .movie_data_card .rating_div a {
     margin-left: 1rem;
     color: #fff;
     text-decoration: none;
 }
 
-.container .content .card-expand .card-data .rating_div a i {
+.container .content .card-expand .card-data .rating_div a i, .tv-card-data .rating_div a i, .movie_data_card .rating_div a i {
     font-size: 1.2rem;
 }
 
-.container .content .card-expand .card-data .opposites_react {
+.container .content .card-expand .card-data .opposites_react, .tv-card-data .opposites_react, .movie_data_card .opposites_react {
     margin-top: 1.6rem;
 }
 
-.container .content .card-expand .card-data .opposites_react h2 {
+.container .content .card-expand .card-data .opposites_react h2, .tv-card-data .opposites_react h2, .movie_data_card .opposites_react h2 {
     font-weight: normal;
     font-size: 1.1rem;
     color: #aaa;
     margin-bottom: 1rem;
 }
 
-.container .content .card-expand .card-data .opposites_react .overview p {
+.container .content .card-expand .card-data .opposites_react .overview p, .tv-card-data .opposites_react .overview p, .movie_data_card .opposites_react .overview p {
     margin-bottom: 0.4rem;
 }
 
-.container .content .card-expand .card-data .opposites_react .overview p {
+.container .content .card-expand .card-data .opposites_react .overview p, .tv-card-data .opposites_react .overview p, .movie_data_card .opposites_react .overview p {
     color: #ddd;
 }
 
-.container .content .card-expand .card-data .opposites_react .overview p .fw-600 {
+.container .content .card-expand .card-data .opposites_react .overview p .fw-600, .tv-card-data .opposites_react .overview p .fw-600, .movie_data_card .opposites_react .overview p .fw-600 {
     font-weight: 600;
     color: #fff;
 }
 
-.container .content .card-expand .card-data .opposites_react .overview p span:not(.fw-600) i {
+.container .content .card-expand .card-data .opposites_react .overview p span:not(.fw-600) i, .tv-card-data .opposites_react .overview p span:not(.fw-600) i, .movie_data_card .opposites_react .overview p span:not(.fw-600) i {
     margin-left: 0.5rem;
     cursor: pointer;
 }
 
-.container .content .card-expand .card-data .opposites_react .overview p span:not(.fw-600) a {
+.container .content .card-expand .card-data .opposites_react .overview p span:not(.fw-600) a, .tv-card-data .opposites_react .overview p span:not(.fw-600) a, .movie_data_card .opposites_react .overview p span:not(.fw-600) a {
     text-decoration: none;
     color: #ddd;
+}
+.container .content .card-expand .card-data .opposites_react .overview p.card-overview{
+    width: 90%;
 }
 
 .container .content .card-expand .section {
@@ -627,8 +655,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container .content .card-expand .other-composite .production .production_com .pro_com_list {
-    display: flex;
-    align-items: center;
     gap: 30px;
     flex-wrap: wrap;
 }
@@ -708,6 +734,11 @@ body::-webkit-scrollbar-thumb {
 .container .content .card-expand .other-composite .sidebar p span:last-child {
     font-weight: 400;
     color: #ccc;
+}
+
+
+.movie_data_card{
+    width: 100%;
 }
 
 .container .pagination {
@@ -807,7 +838,54 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .container .content .card-expand .bg_img img:first-child{
+        margin-left: 220px;
+    }
+    .container .content .card-expand .other-composite{
+        display: flex;
+        flex-direction: column;
+    }
+    .container .content .card-expand .other-composite .production{
+        width: 100%;
+    }
+    .container .content .card-expand .other-composite .sidebar{
+        width: calc(100% - 10%);
+    }
+    .container .content .card-expand .other-composite .sidebar .icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .content .card-expand .other-composite .sidebar .icons a:not(:last-child) {
+        margin-right: 2rem;
+    }
+    .container .content .card-expand .other-composite .sidebar .imp_data{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .sm-hide{
+        display: none;
+    }
+    .tv-card-data{
+        display: flex !important;
+    }
+    .movie_data_card{
+        display: block !important;
+        margin: 0;
+        margin-top: 50px;
+        margin-bottom: -50px;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    .container .content .card-expand .bg_img img:first-child{
+        margin-left: 300px;
+    }
     .container .pagination {
         margin: 0;
         margin-bottom: 0.5rem;
@@ -819,6 +897,17 @@ body::-webkit-scrollbar-thumb {
 
     .container .content .card-expand .other-composite .production .production_com .pro_com_list {
         justify-content: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .container .content .card-expand .section .series-data .data.season{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .container .content .card-expand .section .series-data .data .card{
+        width: 100%;
+        padding-left: 0;
     }
 }
 
@@ -837,14 +926,40 @@ body::-webkit-scrollbar-thumb {
     .container header .header-1 .header-1-2 input {
         width: 100%;
     }
-    .container header .header-1 .header-1-2 img{
+    .container header .header-1 .header-1-2 img, .container header .header-1 .header-1-2 i{
         right: 0%;
     }
     .container header .header-2 ul{
         width: 100%;
     }
+    .container .content .card-expand .bg_img img{
+        height: 400px;
+    }
+    .container .content .card-expand .bg_img img:first-child{
+        margin-left: 0;
+    }
+    .container .content .card-expand .bg_img img:last-child{
+        display: none;
+    }
+    .container .content .card-expand .other-composite .sidebar .icons{
+        justify-content: flex-start;
+    }
+    .container .content .card-expand .other-composite .sidebar .icons a:not(:last-child) {
+        margin-right: 1.2rem;
+    }
+    .container .content .card-expand .other-composite .sidebar .imp_data{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .container .content .card-expand .card-data h1, .tv-card-data h1, .movie_data_card h1{
+        font-size: 2rem;
+    }
+    .container .content .card-expand .card-data h1 span, .tv-card-data h1 span, .movie_data_card h1 span{
+        font-size: 1.4rem;
+    }
     .container footer{
         flex-direction: column;
-        gap: 15px;
+        gap: 25px;
     }
 }

@@ -1,9 +1,11 @@
+import Header from "./Header";
 import Image from "next/image";
-import MovieGenres from "./MovieGenres";   
-import SpokenLang from "./SpokenLang"; 
+import MovieGenres from "./MovieGenres";
+import SpokenLang from "./SpokenLang";
 import ProductionCom from "./ProductionCom";
 import ProductionCountry from "./ProductionCountry";
 import Link from "next/link";
+import Footer from "./Footer";
 
 const MovieDetails = async ({ data }) => {
 
@@ -32,85 +34,122 @@ const MovieDetails = async ({ data }) => {
     }
 
     return (
-        <div className="content">
-            <div className="card-expand">
-                <div className="bg_img">
-                    <Image
-                        src={"https://image.tmdb.org/t/p/w500" + data.poster_path}
-                        alt={data.title}
-                        width={100}
-                        height={100}
-                    />
-                    <Image
-                        src={"https://image.tmdb.org/t/p/w500" + data.backdrop_path}
-                        alt={data.title}
-                        width={100}
-                        height={100}
-                    />
-                </div>
-                <div className="card-data">
-                    <h1>
-                        {data.title}
-                        <span>({movieYear})</span>
-                    </h1>
-                    <MovieGenres data={data} />
-                    <div className="rating_div flex">
-                        <p>{vote_average}⭐</p>
-                        <Link href="#" className="flex">
-                            <i class="bi bi-play-fill"></i> Play Trailer
-                        </Link>
+        <>
+            <Header />
+            <div className="content">
+                <div className="card-expand">
+                    <div className="bg_img">
+                        <Image
+                            src={"https://image.tmdb.org/t/p/w500" + data.poster_path}
+                            alt={data.title}
+                            width={100}
+                            height={100}
+                        />
+                        <Image
+                            src={"https://image.tmdb.org/t/p/w500" + data.backdrop_path}
+                            alt={data.title}
+                            width={100}
+                            height={100}
+                        />
                     </div>
-                    <div className="opposites_react">
-                        <h2>Composites react</h2>
-                        <div className="overview">
-                            <p>
-                                <span className="fw-600">Original title:</span>
-                                {data.original_title}
-                            </p>
-                            <p>
-                                <span className="fw-600">Overview: </span> {data.overview}
-                            </p>
-                            <SpokenLang data={data.spoken_languages} />
-                            <p>
-                                <span className="fw-600">Home page: </span>
-                                <span>
-                                    <i className="bi bi-link-45deg"></i>
-                                    <Link href={homepageLink} target="_blank">{homepageVal}</Link>
-                                </span>
-                            </p>
+                    <div className="card-data sm-hide">
+                        <h1>
+                            {data.title}
+                            <span>({movieYear})</span>
+                        </h1>
+                        <MovieGenres data={data} />
+                        <div className="rating_div flex">
+                            <p>{vote_average}⭐</p>
+                            <Link href="#" className="flex">
+                                <i class="bi bi-play-fill"></i> Play Trailer
+                            </Link>
+                        </div>
+                        <div className="opposites_react">
+                            <h2>Composites react</h2>
+                            <div className="overview">
+                                <p>
+                                    <span className="fw-600">Original title:</span>
+                                    {data.original_title}
+                                </p>
+                                <p className="card-overview">
+                                    <span className="fw-600">Overview: </span> {data.overview}
+                                </p>
+                                <SpokenLang data={data.spoken_languages} />
+                                <p>
+                                    <span className="fw-600">Home page: </span>
+                                    <span>
+                                        <i className="bi bi-link-45deg"></i>
+                                        <Link href={homepageLink} target="_blank">{homepageVal}</Link>
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="other-composite">
-                    <div className="production">
-                        <ProductionCom data={data.production_companies} />
-                        <ProductionCountry data={data.production_countries} />
-                    </div>
-                    <div className="sidebar">
-                        <div className="icons">
-                            <Link href="https://www.facebook.com/freeprojects1/" target="_blank"><i className="bi bi-facebook"></i></Link>
-                            <Link href="https://instagram.com/freeprojects1/" target="_blank"><i className="bi bi-instagram"></i></Link>
-                            <Link href="https://twitter.com/bholu7972/" target="_blank"><i className="bi bi-twitter"></i></Link>
-                            <Link href="https://github.com/bholu-singh/" target="_blank"><i className="bi bi-github"></i></Link>
-                            <Link href="https://www.youtube.com/@freeprojects1?sub_confirmation=1" target="_blank"><i className="bi bi-youtube"></i></Link>
+                    <div className="other-composite">
+                        <div className="movie_data_card">
+                            <h1>
+                                {data.title}
+                                <span>({movieYear})</span>
+                            </h1>
+                            <MovieGenres data={data} />
+                            <div className="rating_div flex">
+                                <p>{vote_average}⭐</p>
+                                <Link href="#" className="flex">
+                                    <i class="bi bi-play-fill"></i> Play Trailer
+                                </Link>
+                            </div>
+                            <div className="opposites_react">
+                                <h2>Composites react</h2>
+                                <div className="overview">
+                                    <p>
+                                        <span className="fw-600">Original title:</span>
+                                        {data.original_title}
+                                    </p>
+                                    <p>
+                                        <span className="fw-600">Overview: </span> {data.overview}
+                                    </p>
+                                    <SpokenLang data={data.spoken_languages} />
+                                    <p>
+                                        <span className="fw-600">Home page: </span>
+                                        <span>
+                                            <i className="bi bi-link-45deg"></i>
+                                            <Link href={homepageLink} target="_blank">{homepageVal}</Link>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <p>
-                            <span>Status</span> <span>{data.status}</span>
-                        </p>
-                        {/* <SpokenLang page={"movie_now-playing_" + page} /> */}
-                        <p>
-                            <span>Original Language</span> <span>{original_language}</span>
-                        </p>
-                        <p>
-                            <span>Budget</span> <span>{data.budget}</span>
-                        </p>
-                        <p>
-                            <span>Revenue</span> <span>{data.revenue}</span>
-                        </p>
+                        <div className="production">
+                            <ProductionCom data={data.production_companies} />
+                            <ProductionCountry data={data.production_countries} />
+                        </div>
+                        <div className="sidebar">
+                            <div className="icons">
+                                <Link href="https://www.facebook.com/freeprojects1/" target="_blank"><i className="bi bi-facebook"></i></Link>
+                                <Link href="https://instagram.com/freeprojects1/" target="_blank"><i className="bi bi-instagram"></i></Link>
+                                <Link href="https://twitter.com/bholu7972/" target="_blank"><i className="bi bi-twitter"></i></Link>
+                                <Link href="https://github.com/bholu-singh/" target="_blank"><i className="bi bi-github"></i></Link>
+                                <Link href="https://www.youtube.com/@freeprojects1?sub_confirmation=1" target="_blank"><i className="bi bi-youtube"></i></Link>
+                            </div>
+                            <p>
+                                <span>Status</span> <span>{data.status}</span>
+                            </p>
+                            {/* <SpokenLang page={"movie_now-playing_" + page} /> */}
+                            <p>
+                                <span>Original Language</span> <span>{original_language}</span>
+                            </p>
+                            <p>
+                                <span>Budget</span> <span>{data.budget}</span>
+                            </p>
+                            <p>
+                                <span>Revenue</span> <span>{data.revenue}</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <Footer />
+        </>
     )
 }
 export default MovieDetails;

@@ -5,7 +5,7 @@ const GetTvSeasons = ({ data }) => {
         <div className="data column">
             {data.slice().reverse().map((item) => (
                 <>
-                    <div className="card center">
+                    <div className="card">
                         <div className="imgBx">
                             <Image
                                 src={

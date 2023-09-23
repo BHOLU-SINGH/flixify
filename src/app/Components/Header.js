@@ -1,7 +1,16 @@
+"use client"
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Header = () =>  {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
   return (
     <header>
       <div className="header-1">
@@ -15,14 +24,8 @@ const Header = () =>  {
           />
         </div>
         <div className="header-1-2 center">
-          <input type="text" placeholder="What are you looking for?" />
-          <Image
-            src="/search.png"
-            alt="Flixify Logo"
-            width={45}
-            height={40}
-            priority
-          />
+          <input type="text" value={inputValue} placeholder="What are you looking for?" onChange={handleChange} />
+          <i className="bi bi-search center"></i>
         </div>
       </div>
       <div className="header-2 center">
