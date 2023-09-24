@@ -42,6 +42,24 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
 }
 
+.color-white{
+    color: #fff;
+}
+.color-white-c{
+    color: #ccc;
+}
+.info {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.info p{
+    color: rgba(255, 255, 255, 0.3);
+    padding: 0 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .not-found a {
     margin-top: 1rem;
     color: #eee;
@@ -183,6 +201,108 @@ body::-webkit-scrollbar-thumb {
 .container header .header-2 ul li .dropdown-menu li a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
+
+.disclaimer{
+    color: #ccc;
+    padding: 30px;
+}
+.disclaimer h1{
+    color: #ddd;
+    margin-bottom: 2rem;
+}
+.disclaimer p {
+    display: flex;
+    flex-wrap: wrap;
+}
+.disclaimer p:first-child{
+    margin-bottom: 1rem;
+}
+.disclaimer ul{
+    margin-bottom: 1rem;
+    margin-left: 1.8rem;
+}
+.disclaimer p a{
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 0.3rem;
+}
+.disclaimer a.mt-2{
+    margin-top: 2rem;
+    color: #ccc;
+}
+.disclaimer a i{
+    margin-right: 0.3rem;
+    margin-top: 3px;
+}
+
+.container.form form{
+    width: 400px;
+    height: auto;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.1);
+}
+.container.form form h1{
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+.container.form form p{
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    text-align: center;
+}
+.container.form form .form-field{
+    width: 100%;
+    margin-bottom: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #ccc;
+    font-size: 16px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.container.form form .form-field:focus, .container.form form .form-field:hover{
+    border: 1px solid #ccc;
+}
+.container.form form input{
+    height: 40px;
+    padding: 0 12px;
+}
+.container.form form textarea{
+    height: 80px;
+    resize: none;
+    padding: 10px
+}
+.container.form form .btn{
+    width: auto;
+    padding: 8px 30px;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: transform, background, color 0.3 ease;
+}
+.container.form form .btn:active{
+    transform: scale(0.9);
+}
+.container.form form .btn:hover{
+    background: #ccc;
+    color: #000;
+}
+.container.form form a{
+    color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    margin-top: 1.5rem;
+    transition: color 0.3s ease;
+}
+.container.form form a i {
+    margin-right: 0.3rem;
+    margin-top: 3px;
+}
+.container.form form a:hover, .container.form form a:active{
+    color: #ccc;
+}
+
 
 .container .content {
     position: relative;
@@ -832,6 +952,24 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid #ccc;
 }
 
+/* Styles for "how-to-use" page */
+.how_to_use{
+    padding: 20px 30px;
+}
+.how_to_use ul{
+    margin-top: 0.5rem;
+    margin-left: 1.8rem;
+}
+.how_to_use .demo{
+    margin-top: 1rem;
+    padding: 10px 0;
+    gap: 50px;
+}
+.how_to_use .demo div h2{
+    margin-bottom: 1rem;
+}
+
+
 @media screen and (max-width: 1230px) {
     .container .content .cardBox {
         width: auto;
@@ -932,6 +1070,9 @@ body::-webkit-scrollbar-thumb {
     .container header .header-2 ul{
         width: 100%;
     }
+    .container.form form {
+        background: none;
+    }
     .container .content .card-expand .bg_img img{
         height: 400px;
     }
@@ -958,6 +1099,11 @@ body::-webkit-scrollbar-thumb {
     .container .content .card-expand .card-data h1 span, .tv-card-data h1 span, .movie_data_card h1 span{
         font-size: 1.4rem;
     }
+
+    .how_to_use .demo{
+        flex-direction: column;
+    }
+
     .container footer{
         flex-direction: column;
         gap: 25px;

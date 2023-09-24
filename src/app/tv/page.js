@@ -17,7 +17,7 @@ export default async function page() {
     return (
         <div className="container">
             <Header />
-            <TvCard data={data} page="tv" />
+            <TvCard data={data} page="tv/airing-today" />
             <Pagination start_page={data.page} end_page={data.total_pages} page="tv/airing-today/page" />
             <Footer />
         </div>
