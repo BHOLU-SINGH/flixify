@@ -11,6 +11,7 @@ const Footer = () => {
         </li>
         <li>
           <Link href="#">DMCA</Link>
+          {/* <Link href="#">Login</Link> */}
         </li>
         <li>
           <Link href="/request">Request</Link>

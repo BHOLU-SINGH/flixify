@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Button from "./Button";
 
+const { API_URL, API_KEY } = process.env;
+
 const genres = [
     {
         "id": 12,
@@ -125,7 +127,7 @@ function getGenreNamesByIds(genreIds) {
     return genreNames;
 }
 
-const MovieCard = async ({ data, page }) => {
+const Card = async ({ data }) => {
     return (
         <div className="content center">
             <div className="cardBox">
@@ -138,15 +140,15 @@ const MovieCard = async ({ data, page }) => {
                             height={50}
                             priority
                         />
-                        <span className="title">{item.title}</span>
+                        <span className="title">{item.media_type === "movie" ? item.title : item.name}</span>
                         <div>
-                            <span>{item.release_date}</span>
-                            <span className="popularity">{item.vote_average}⭐</span>
+                            <span>{item.release_date ? item.release_date : item.first_air_date}</span>
+                            <span className="popularity">{(item.vote_average)}⭐</span>
                         </div>
                         <span className="overview">
-                            <small className="ow-title">Title: {item.title}</small>
+                            <small className="ow-title">Title: {item.title ? item.title : item.name}</small>
                             <small className="ow-rel-date">
-                                Release Date: {item.release_date}
+                                Release Date: {item.release_date ? item.release_date : item.first_air_date}
                             </small>
                             <small className="genres">
                                 {
@@ -156,7 +158,7 @@ const MovieCard = async ({ data, page }) => {
                                 }
                             </small>
                             <small className="overw">OverView: {item.overview}</small>
-                            <Button id={item.id} page={page} />
+                            <Button id={item.id} page={item.media_type} />
                         </span>
                     </div>
                 ))}
@@ -165,4 +167,4 @@ const MovieCard = async ({ data, page }) => {
     )
 }
 
-export default MovieCard;
+export default Card;

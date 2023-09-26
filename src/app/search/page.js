@@ -1,18 +1,26 @@
-"use client"
+import Header from "../Components/Header";
+import MovieCard from "../Components/MovieCard";
+import Pagination from "../Components/Pagination";
+import Footer from "../Components/Footer";
 
-import { useState } from "react";
+const { API_URL, API_KEY } = process.env;
 
-const Page = () => {
-    const [inputValue, setInputValue] = useState('');
+async function getServerSideProps() {
+    const API = API_URL + "search/multi?query=barbie&include_adult=false&language=en-US&api_key=" + API_KEY + "&page=1";
+    const response = await fetch(API);
+    const data = await response.json();
+    return data;
+}
 
-    const handleChange = (event) => {
-        setInputValue(event.target.value);
-    };
+const Page = async () => {
+    const data = await getServerSideProps();
 
     return (
-        <div className="container center fd-column">
-            <input type="text" value={inputValue} onChange={handleChange} style={{gap: "5"}} />
-            <p style={{color: "#fff"}}>Input value: {inputValue}</p>
+        <div className="container">
+            <Header />
+            <MovieCard data={data} page="movie/now-playing" />
+            <Pagination start_page={data.page} end_page={data.total_pages} page="search/page" />
+            <Footer />
         </div>
     );
 }

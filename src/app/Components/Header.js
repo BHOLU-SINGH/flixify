@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import React from 'react';
 
 const Header = () => {
   const [inputValue, setInputValue] = useState('');
 
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
+  const handleChange = () => {
+    (inputValue.length > 0) ? console.log("Search query is : " + inputValue) : console.log("Invalid search query");
   };
 
   return (
@@ -25,8 +26,8 @@ const Header = () => {
             />
           </div>
           <div className="header-1-2 center">
-            <input type="text" value={inputValue} placeholder="What are you looking for?" onChange={handleChange} />
-            <i className="bi bi-search center"></i>
+            <input type="text" value={inputValue} placeholder="What are you looking for?" onChange={(e) => setInputValue(e.target.value)} />
+            <i className="bi bi-search center" onClick={handleChange}></i>
           </div>
         </div>
         <div className="header-2 center">
@@ -39,6 +40,7 @@ const Header = () => {
             <li>
               <Link href="#">Movies</Link>
               <ul className="dropdown-menu">
+                <li><Link href="/movie">Movie</Link></li>
                 <li><Link href="/movie/now-playing">Now Playing</Link></li>
                 <li><Link href="/movie/popular">Popular</Link></li>
                 <li><Link href="/movie/top-rated">Top Rated</Link></li>
@@ -159,6 +161,7 @@ const Header = () => {
             <li>
               <Link href="/">TV Shows</Link>
               <ul className="dropdown-menu">
+                <li><Link href="/tv">TV Shows</Link></li>
                 <li><Link href="/tv/airing-today">Airing Today</Link></li>
                 <li><Link href="/tv/on-the-air">On The Air</Link></li>
                 <li><Link href="/tv/popular">Popular</Link></li>
@@ -204,7 +207,7 @@ const Header = () => {
         </div>
       </header>
       <div className="info center fd-column">
-        <p>Currently, two tabs are working, the first is &#39;Movie&#39; and the second is &#39;TV Shows&#39;, except these other tabs are in working status.</p>
+          <p><span>Warning</span>: Currently, two tabs are working, the first is &#39;Movie&#39; and the second is &#39;TV Shows&#39;, except these other tabs are in working status.</p>
       </div>
     </>
   );

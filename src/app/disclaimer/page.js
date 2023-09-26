@@ -14,7 +14,7 @@ const page = () => {
                     <li>These terms and conditions are governed by the laws of the State of California.</li>
                 </ul>
 
-                <p>3. If you have any questions about this disclaimer, please contact us at <Link href="https://github.com/bholu-singh/">[Bholu Singh]</Link>.</p>
+                <p>3. If you have any questions about this disclaimer, please contact us at <Link style={{textDecoration: "underline"}} href="https://github.com/bholu-singh/">[Bholu Singh]</Link>.</p>
                 <Link className="center mt-2" href="/"><i className="bi bi-arrow-return-left"></i> Return to home</Link>
             </div>
         </div>
