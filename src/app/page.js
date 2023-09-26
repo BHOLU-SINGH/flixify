@@ -2,7 +2,7 @@ import Header from "./Components/Header";
 import Card from "./Components/Card";
 import Footer from "./Components/Footer";
 import Pagination from "./Components/Pagination";
-import GetSearchQueryData from "./Components/GetSearchQueryData";
+// import GetSearchQueryData from "./Components/GetSearchQueryData";
 
 const { API_URL, API_KEY } = process.env;
 

@@ -153,7 +153,7 @@ const Card = async ({ data }) => {
                             <small className="genres">
                                 {
                                     getGenreNamesByIds(item.genre_ids).map((genres_item) => (
-                                        <small>{genres_item}</small>
+                                        <small key={item.id}>{genres_item}</small>
                                     ))
                                 }
                             </small>

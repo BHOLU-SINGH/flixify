@@ -131,7 +131,7 @@ const TvCard = ({ data, page }) => {
             <div className="cardBox">
                 {data.results.map((item) => (
                     <>
-                        <div className="card">
+                        <div className="card" key={item.id}>
                             <Image
                                 src={"https://image.tmdb.org/t/p/w500" + item.poster_path}
                                 alt="{item.name}"
@@ -152,7 +152,7 @@ const TvCard = ({ data, page }) => {
                                 <small className="genres">
                                     {
                                         getGenreNamesByIds(item.genre_ids).map((genres_item) => (
-                                            <small>{genres_item}</small>
+                                            <small key={item.id}>{genres_item}</small>
                                         ))
                                     }
                                 </small>
